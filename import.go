@@ -12,9 +12,9 @@ var (
 		"gorm.io/gorm/schema",
 		"gorm.io/gorm/clause",
 		"",
-		"gorm.io/gen",
-		"gorm.io/gen/field",
-		"gorm.io/gen/helper",
+		"github.com/bryce-gif/gen",
+		"github.com/bryce-gif/gen/field",
+		"github.com/bryce-gif/gen/helper",
 		"",
 		"gorm.io/plugin/dbresolver",
 	)

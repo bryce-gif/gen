@@ -19,12 +19,12 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 
-	"gorm.io/gen/helper"
-	"gorm.io/gen/internal/generate"
-	"gorm.io/gen/internal/model"
-	"gorm.io/gen/internal/parser"
-	tmpl "gorm.io/gen/internal/template"
-	"gorm.io/gen/internal/utils/pools"
+	"github.com/bryce-gif/gen/helper"
+	"github.com/bryce-gif/gen/internal/generate"
+	"github.com/bryce-gif/gen/internal/model"
+	"github.com/bryce-gif/gen/internal/parser"
+	tmpl "github.com/bryce-gif/gen/internal/template"
+	"github.com/bryce-gif/gen/internal/utils/pools"
 )
 
 // T generic type
@@ -88,8 +88,8 @@ func (i *genInfo) methodInGenInfo(m *generate.InterfaceMethod) bool {
 type Generator struct {
 	Config
 
-	Data   map[string]*genInfo                  //gen query data
-	models map[string]*generate.QueryStructMeta //gen model data
+	Data   map[string]*genInfo                  // gen query data
+	models map[string]*generate.QueryStructMeta // gen model data
 }
 
 // UseDB set db connection

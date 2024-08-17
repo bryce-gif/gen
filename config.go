@@ -9,7 +9,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/utils/tests"
 
-	"gorm.io/gen/internal/model"
+	"github.com/bryce-gif/gen/internal/model"
 )
 
 // GenerateMode generate mode
@@ -30,17 +30,17 @@ const (
 type Config struct {
 	db *gorm.DB // db connection
 
-	OutPath      string // query code path
-	OutFile      string // query code file name, default: gen.go
-	ModelPkgPath string // generated model code's package name
-	WithUnitTest bool   // generate unit test for query code
+	OutPath      string // 查询代码路径
+	OutFile      string // 查询代码文件名，默认: gen.go
+	ModelPkgPath string // 生成的模型代码的包名
+	WithUnitTest bool   // 为查询代码生成单元测试
 
-	// generate model global configuration
-	FieldNullable     bool // generate pointer when field is nullable
-	FieldCoverable    bool // generate pointer when field has default value, to fix problem zero value cannot be assign: https://gorm.io/docs/create.html#Default-Values
-	FieldSignable     bool // detect integer field's unsigned type, adjust generated data type
-	FieldWithIndexTag bool // generate with gorm index tag
-	FieldWithTypeTag  bool // generate with gorm column type tag
+	// 生成模型全局配置
+	FieldNullable     bool // 当字段可为空时生成指针
+	FieldCoverable    bool // 当字段有默认值时生成指针，以修复无法分配零值的问题: https://gorm.io/docs/create.html#Default-Values
+	FieldSignable     bool // 检测整数字段的无符号类型，调整生成的数据类型
+	FieldWithIndexTag bool // 使用 gorm 索引标签生成
+	FieldWithTypeTag  bool // 使用 gorm 列类型标签生成
 
 	Mode GenerateMode // generate mode
 
